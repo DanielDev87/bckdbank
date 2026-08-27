@@ -1,0 +1,26 @@
+server:
+    port: 8080   
+
+spring:
+    application:
+        name: bckdbank
+
+    datasource: # en prod sería secrets o variables de entrorno
+        url: jdbc:mysql://localhost:3306/db_bank?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+        username: root
+        password: root
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+        hibernate:
+            ddl-auto: update # en produccion va: validate
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+                dialect: org.hibernate.dialect.MySQLDialect
+
+app:
+    jwt:
+        secret: #agregar un hash
+        expiration-ms: # agregarun tiempo

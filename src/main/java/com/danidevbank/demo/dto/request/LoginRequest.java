@@ -1,5 +1,15 @@
 package com.danidevbank.demo.dto.request;
 
-public class LoginRequest {
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+public class LoginRequest {
+    @Email(message = "Debe proporcionar un email válido")
+    @NotBlank(message = "El email no puede estar vacío")
+    private String email;
+
+    @NotBlank(message = "La contraseña no puede estar vacía")
+    private String password;
 }

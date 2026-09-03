@@ -1,7 +1,7 @@
-package com.danidevbank.demo.execption;
+package com.danidevbank.demo.exception;
 
-public class InsuffienteBalanceException extends RuntimeException {
-    public InsuffienteBalanceException(String message){
+public class InsufficientBalanceException extends RuntimeException {
+    public InsufficientBalanceException(String message){
         super(message);
     }
 

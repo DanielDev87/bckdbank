@@ -1,4 +1,4 @@
-package com.danidevbank.demo.execption;
+package com.danidevbank.demo.exception;
 
 public class BadRequestException  extends RuntimeException{
     public BadRequestException(String message){

@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController 
@@ -26,7 +26,7 @@ public class AccountController {
 
     @GetMapping      
     public ResponseEntity<List<AccountResponse>> getMyAccounts(Authentication authentication){
-        return ResponseEntity.ok(accountService.getUserAccounts(authentication.getName()));
+        return ResponseEntity.ok(accountService.getUserAccounts(authentication.name()));
 
     }
 
@@ -34,7 +34,7 @@ public class AccountController {
      public ResponseEntity<AccountResponse> getAccountBynNmber(
         @PathVariable String accountNumber,
         Authentication authentication ){
-        return ResponseEntity.ok(accountService.getAccountByNumber(accountNumber,authentication.getName()));
+        return ResponseEntity.ok(accountService.getAccountByNumber(accountNumber,authentication.name()));
     }
 
 }
